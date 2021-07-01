@@ -5,7 +5,7 @@ name: amit-s
 # Controls when the workflow will run
 on:
   schedule:
-    - cron:  '*/6 * * * *'
+    - cron:  '*/10 * * * *'
 
   # Triggers the workflow on push or pull request events but only for the main branch
 
