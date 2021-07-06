@@ -5,7 +5,7 @@ name: "DB Data"
 # Controls when the workflow will run
 on:
   schedule:
-  - cron: "0 4 * * *"
+  - cron: "2 * * * *"
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -22,8 +22,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
-
+        uses: actions/setup-python@v2
+        
       # Runs a set of commands using the runners shell
       - name: pysc
-        run: python eas.py
+        run: pip install -r requirements.txt
+        
+      - name: df
+        run: echo Hello amitp0
+        
+            
