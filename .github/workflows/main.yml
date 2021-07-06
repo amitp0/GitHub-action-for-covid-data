@@ -48,7 +48,7 @@ jobs:
       - name: Install poppler
         run:  |
           sudo apt install tesseract-ocr
-          sudo apt-get install poppler-utlis
+          sudo apt install poppler-utlis
  
   
       - name: Job done
