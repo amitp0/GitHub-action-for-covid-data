@@ -167,3 +167,4 @@ df_final=df_pri.join(df_containment.join(df_microcontainment.set_index('ward'), 
 
 df_final=(df_final.sort_values(by='ward')).reset_index(drop='True')
 df_final.to_json('file1.json', orient = 'index', compression = 'infer')
+print(df_final)
