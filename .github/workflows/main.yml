@@ -47,4 +47,7 @@ jobs:
           
       - name: Job done
         run: echo Job done successfully
+        
+      - name: Check py file
+        run: python eas.py
             
