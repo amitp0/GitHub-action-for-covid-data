@@ -44,6 +44,8 @@ jobs:
           pip install pyrebase
           pip install pytesseract
           pip install pandas
+          sudo apt install tesseract-ocr
+          apt-get install poppler-utils
           
       - name: Job done
         run: echo Job done successfully
