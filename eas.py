@@ -153,6 +153,15 @@ for x in range(len(intvar)):
 to_int()
 to_str()
 
+for x in list_str:
+  for y in range(len(list_str[x])):
+    if list_str[x][y]=="SS":
+        list_str[x][y]="S"
+    elif list_str[x][y]=="CC":
+        list_str[x][y]="C"
+    elif list_str[x][y]=="I":
+       list_str[x][y]="T"
+
 data_primary = {'ward':list_str['data_ward'],'confirmed':list_int['data_confirmed'],'active':list_int['data_active'],'recovered':list_int['data_recovered'],'deceased':list_int['data_deceased']}
 df_pri = pd.DataFrame(data_primary)
 
