@@ -37,7 +37,14 @@ jobs:
       - name: install python packages
         run: |
           pip install --upgrade pip setuptools wheel
-          pip install -r requirements.txt        
+          pip install opencv-python
+          
+          pip install requests
+          pip install pdf2image
+          pip install Pillow
+          pip install pyrebase
+          pip install pytesseract
+          pip install pandas
           
       - name: Job done
         run: echo Job done successfully..... ;)
