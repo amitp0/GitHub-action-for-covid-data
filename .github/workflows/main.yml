@@ -36,9 +36,8 @@ jobs:
           
       - name: install python packages
         run: |
-          pip install --upgrade pip setuptools wheel
+          pip install --upgrade pip 
           pip install opencv-python
-          
           pip install requests
           pip install pdf2image
           pip install Pillow
