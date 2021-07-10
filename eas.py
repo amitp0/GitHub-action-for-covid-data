@@ -8,6 +8,10 @@ import json
 import pandas as pd
 from pdf2image import convert_from_bytes
 
+CONFIG=os.environ['CONFIG']
+firebase = pyrebase.initialize_app(CONFIG)
+db = firebase.database()
+
 pdf_link="https://stopcoronavirus.mcgm.gov.in/assets/docs/Dashboard.pdf"
 img_name=["status","containmentZones","microcontainmentZones","data","vaccination"]
 cropped_img_name=["containmentZones_val","containmentZones_ward","data_active","data_confirmed","data_deceased","data_recovered","data_ward","microcontainmentZones_val","microcontainmentZones_ward","status_dtd","status_gr","status_pos","status_ward","vaccination_all"]
@@ -175,5 +179,9 @@ df_containment.join(df_microcontainment.set_index('ward'), on='ward')
 df_final=df_pri.join(df_containment.join(df_microcontainment.set_index('ward'), on='ward').set_index('ward'), on='ward')
 
 df_final=(df_final.sort_values(by='ward')).reset_index(drop='True')
-df_final.to_json('file1.json', orient = 'index', compression = 'infer')
 print(df_final)
+
+result = df_final.to_json(orient="index")
+parsed = json.loads(result)
+data=json.dumps(parsed)
+db.child("ward").set(data)
