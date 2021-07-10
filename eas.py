@@ -14,7 +14,7 @@ cropped_img_name=["containmentZones_val","containmentZones_ward","data_active","
 page_numbers=[2,16,17,22,37]
 
 def save_images():
-  pdf_file=requests.get(pdf_link).content
+  pdf_file=requests.get(pdf_link,verify=False).content
   with open('file.pdf','wb') as handler:
     handler.write(pdf_file)
   images = convert_from_bytes(open('file.pdf','rb').read(),dpi=300,first_page=1,last_page=38)
