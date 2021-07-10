@@ -55,9 +55,5 @@ jobs:
         run: echo Job done successfully
         
       - name: Check py file
-        env:  
-          ${{ secrets.CONFIG }}
-        run:  |
-          echo ${{secrets.CONFIG} | sed 's/./& /g'
-          python eas.py
+        run: python eas.py
             
