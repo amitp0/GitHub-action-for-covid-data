@@ -32,7 +32,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.6'  
+          python-version: '3.x'  
           
       - name: install python packages
         run: |
