@@ -5,11 +5,14 @@ from PIL import Image
 import pytesseract
 import re
 import json
+import base64
 import pandas as pd
 from pdf2image import convert_from_bytes
 
 CONFIG=os.environ['CONFIG']
-firebase = pyrebase.initialize_app(CONFIG)
+decode=base64.b64decode(CONFIG.decode('utf-8'))
+config=json.loads(decode)
+firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
 pdf_link="https://stopcoronavirus.mcgm.gov.in/assets/docs/Dashboard.pdf"
