@@ -8,7 +8,7 @@ import json
 import pandas as pd
 from pdf2image import convert_from_bytes
 
-pdf_link="http://stopcoronavirus.mcgm.gov.in/assets/docs/Dashboard.pdf"
+pdf_link="https://stopcoronavirus.mcgm.gov.in/assets/docs/Dashboard.pdf"
 img_name=["status","containmentZones","microcontainmentZones","data","vaccination"]
 cropped_img_name=["containmentZones_val","containmentZones_ward","data_active","data_confirmed","data_deceased","data_recovered","data_ward","microcontainmentZones_val","microcontainmentZones_ward","status_dtd","status_gr","status_pos","status_ward","vaccination_all"]
 page_numbers=[2,16,17,22,37]
