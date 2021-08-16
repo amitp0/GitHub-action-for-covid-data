@@ -4,8 +4,8 @@ name: "DB Data h"
 
 # Controls when the workflow will run
 on:
-  schedule:
-  - cron: "30 14 * * *"
+  #schedule:
+#  - cron: "30 14 * * *"
   
   workflow_dispatch:
 
